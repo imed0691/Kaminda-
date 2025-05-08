@@ -16,3 +16,5 @@ const LikeButton = ({ initialLikes }) => {
     </button>
   );
 };
+
+export default LikeButton;

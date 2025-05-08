@@ -1,7 +1,7 @@
-import { useState } from "react";
+import React from "react";
 import LikeButton from "./LikeButton";
 import CommentSection from "./CommentSection";
-import { formatTimestamp } from "../utils/dateFormatter";
+import { formatTimestamp } from "../utils/dateFrame";
 import "../styles/Post.css";
 
 const Post = ({ post }) => {

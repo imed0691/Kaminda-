@@ -1,5 +1,7 @@
+import React from "react";
 import { useParams } from "react-router-dom";
-import { users, posts } from "../data";
+import { users } from "../data/users";
+import { posts } from "../data/posts";
 
 const ProfilePage = () => {
   const { userId } = useParams();
@@ -18,3 +20,5 @@ const ProfilePage = () => {
     </div>
   );
 };
+
+export default ProfilePage;

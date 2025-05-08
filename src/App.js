@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./context/ThemeContext";
-import HomePage from "./pages/HomePage";
-import ProfilePage from "./pages/ProfilePage";
+import HomePage from "./Pages/HomePage";
+import ProfilePage from "./Pages/ProfilePage";
 import "./App.css"; // Styles globaux (optionnel)
 
 function App() {

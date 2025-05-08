@@ -14,3 +14,5 @@ const CommentSection = ({ comments }) => {
       </div>
     );
   };
+
+  export default CommentSection;
