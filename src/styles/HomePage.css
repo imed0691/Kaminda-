@@ -1,0 +1,27 @@
+.homepage {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .post-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .load-more-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 25px;
+    background: #0095f6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+  }
+  
+  .load-more-btn:hover {
+    opacity: 0.8;
+  }
