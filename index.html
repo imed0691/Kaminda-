@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnkiPro Français - Traduction et Mémorisation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">
+                <i class="fas fa-language"></i>
+            </div>
+            <h1>AnkiPro Français</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="nav-link active" data-target="home">Accueil</a></li>
+                <li><a href="#" class="nav-link" data-target="translate">Traduire</a></li>
+                <li><a href="#" class="nav-link" data-target="import">Importer</a></li>
+                <li><a href="#" class="nav-link" data-target="learn">Apprendre</a></li>
+                <li><a href="#" class="nav-link" data-target="dashboard">Tableau de bord</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <main>
+        <!-- Section Accueil -->
+        <section id="home" class="page active">
+            <div class="hero">
+                <h2>Apprenez l'anglais efficacement</h2>
+                <p>Traduisez, importez et mémorisez des mots anglais avec notre système de répétition espacée</p>
+                <div class="cta-buttons">
+                    <button class="btn primary" data-action="go-translate">Traduire un mot</button>
+                    <button class="btn secondary" data-action="go-import">Importer une liste</button>
+                    <button class="btn accent" data-action="go-learn">Commencer à apprendre</button>
+                </div>
+            </div>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Traduction instantanée</h3>
+                    <p>Traduisez des mots anglais vers le français en un clic</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-import"></i>
+                    </div>
+                    <h3>Import de listes</h3>
+                    <p>Importez facilement des listes de mots à traduire et mémoriser</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Mémorisation efficace</h3>
+                    <p>Système de répétition espacée inspiré d'Anki</p>
+                </div>
+            </div>
+            
+            <div class="quick-start">
+                <h3>Guide rapide</h3>
+                <ol>
+                    <li>Traduisez un mot ou importez une liste</li>
+                    <li>Ajoutez les mots à votre liste d'apprentissage</li>
+                    <li>Utilisez les flashcards pour mémoriser</li>
+                    <li>Suivez votre progression dans le tableau de bord</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Section Traduction -->
+        <section id="translate" class="page">
+            <h2>Traduction</h2>
+            <div class="translation-container">
+                <div class="translation-input">
+                    <label for="word-input">Mot ou phrase en anglais :</label>
+                    <input type="text" id="word-input" placeholder="Entrez un mot en anglais...">
+                    <button id="translate-btn" class="btn primary">Traduire</button>
+                </div>
+                
+                <div class="translation-result">
+                    <div class="result-card hidden">
+                        <div class="word-original">
+                            <h3>Mot original</h3>
+                            <p id="original-word"></p>
+                        </div>
+                        <div class="word-translation">
+                            <h3>Traduction</h3>
+                            <p id="translated-word"></p>
+                        </div>
+                        <div class="translation-actions">
+                            <button id="add-to-learn" class="btn secondary">
+                                <i class="fas fa-plus"></i> Ajouter à ma liste
+                            </button>
+                            <button id="pronounce-btn" class="btn outline">
+                                <i class="fas fa-volume-up"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="recent-translations">
+                    <h3>Traductions récentes</h3>
+                    <div id="recent-translations-list" class="recent-list">
+                        <!-- Les traductions récentes seront ajoutées ici dynamiquement -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Import -->
+        <section id="import" class="page">
+            <h2>Importer une liste</h2>
+            <div class="import-container">
+                <div class="import-options">
+                    <div class="import-option active" data-option="paste">
+                        <i class="fas fa-paste"></i>
+                        <span>Coller du texte</span>
+                    </div>
+                    <div class="import-option" data-option="file">
+                        <i class="fas fa-file-upload"></i>
+                        <span>Importer un fichier</span>
+                    </div>
+                </div>
+                
+                <div class="import-content">
+                    <div id="paste-option" class="import-panel active">
+                        <label for="word-list">Collez votre liste de mots (un mot par ligne) :</label>
+                        <textarea id="word-list" placeholder="apple&#10;book&#10;computer&#10;..."></textarea>
+                    </div>
+                    
+                    <div id="file-option" class="import-panel">
+                        <label for="file-input" class="file-label">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span>Choisir un fichier</span>
+                        </label>
+                        <input type="file" id="file-input" accept=".txt,.csv">
+                        <p class="file-name">Aucun fichier sélectionné</p>
+                    </div>
+                    
+                    <button id="import-translate-btn" class="btn primary">Traduire la liste</button>
+                </div>
+                
+                <div class="import-results hidden">
+                    <h3>Résultats de la traduction</h3>
+                    <div class="results-actions">
+                        <button id="add-all-btn" class="btn secondary">
+                            <i class="fas fa-plus-circle"></i> Tout ajouter à ma liste
+                        </button>
+                        <button id="edit-list-btn" class="btn outline">
+                            <i class="fas fa-edit"></i> Modifier
+                        </button>
+                    </div>
+                    
+                    <div class="results-table-container">
+                        <table id="results-table">
+                            <thead>
+                                <tr>
+                                    <th>Mot anglais</th>
+                                    <th>Traduction française</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-body">
+                                <!-- Les résultats seront ajoutés ici dynamiquement -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Apprentissage -->
+        <section id="learn" class="page">
+            <h2>Apprendre</h2>
+            <div class="learning-container">
+                <div class="learning-stats">
+                    <div class="stat">
+                        <span id="remaining-count">0</span>
+                        <label>Mots restants</label>
+                    </div>
+                    <div class="stat">
+                        <span id="learned-today">0</span>
+                        <label>Appris aujourd'hui</label>
+                    </div>
+                    <div class="stat">
+                        <span id="mastered-count">0</span>
+                        <label>Maîtrisés</label>
+                    </div>
+                </div>
+                
+                <div class="flashcard-container">
+                    <div class="flashcard">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">
+                                <p id="flashcard-question"></p>
+                                <div class="flashcard-hint">
+                                    <i class="fas fa-redo"></i> Cliquez pour retourner
+                                </div>
+                            </div>
+                            <div class="flashcard-back">
+                                <p id="flashcard-answer"></p>
+                                <div class="flashcard-hint">
+                                    <i class="fas fa-redo"></i> Cliquez pour retourner
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flashcard-controls">
+                        <button id="difficult-btn" class="btn difficulty difficult">
+                            <i class="fas fa-frown"></i> Difficile
+                        </button>
+                        <button id="good-btn" class="btn difficulty good">
+                            <i class="fas fa-meh"></i> Correct
+                        </button>
+                        <button id="easy-btn" class="btn difficulty easy">
+                            <i class="fas fa-smile"></i> Facile
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="no-cards-message hidden">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Félicitations !</h3>
+                    <p>Vous avez terminé toutes vos cartes pour aujourd'hui.</p>
+                    <button id="add-more-words-btn" class="btn primary">Ajouter plus de mots</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Tableau de bord -->
+        <section id="dashboard" class="page">
+            <h2>Tableau de bord</h2>
+            <div class="dashboard-container">
+                <div class="dashboard-header">
+                    <div class="search-bar">
+                        <input type="text" id="search-words" placeholder="Rechercher un mot...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="filter-options">
+                        <select id="filter-status">
+                            <option value="all">Tous les mots</option>
+                            <option value="new">Nouveaux</option>
+                            <option value="learning">En apprentissage</option>
+                            <option value="review">À réviser</option>
+                            <option value="mastered">Maîtrisés</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="words-table-container">
+                    <table id="words-table">
+                        <thead>
+                            <tr>
+                                <th>Mot anglais</th>
+                                <th>Traduction</th>
+                                <th>Statut</th>
+                                <th>Prochaine révision</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="words-table-body">
+                            <!-- Les mots seront ajoutés ici dynamiquement -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="dashboard-actions">
+                    <button id="export-data-btn" class="btn outline">
+                        <i class="fas fa-file-export"></i> Exporter les données
+                    </button>
+                    <button id="import-data-btn" class="btn outline">
+                        <i class="fas fa-file-import"></i> Importer des données
+                    </button>
+                    <button id="reset-data-btn" class="btn danger">
+                        <i class="fas fa-trash-alt"></i> Réinitialiser
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 AnkiPro Français - Tous droits réservés</p>
+            <div class="footer-links">
+                <a href="#" id="settings-link">Paramètres</a>
+                <a href="#" id="about-link">À propos</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de paramètres -->
+    <div class="modal" id="settings-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Paramètres</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="settings-section">
+                    <h4>Apprentissage</h4>
+                    <div class="setting-item">
+                        <label for="cards-per-day">Nombre de cartes par jour :</label>
+                        <input type="number" id="cards-per-day" min="5" max="100" value="20">
+                    </div>
+                    <div class="setting-item">
+                        <label for="new-cards-per-day">Nouvelles cartes par jour :</label>
+                        <input type="number" id="new-cards-per-day" min="1" max="50" value="10">
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <h4>Interface</h4>
+                    <div class="setting-item">
+                        <label for="theme-select">Thème :</label>
+                        <select id="theme-select">
+                            <option value="light">Clair</option>
+                            <option value="dark">Sombre</option>
+                            <option value="auto">Automatique</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn secondary" id="save-settings">Enregistrer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal À propos -->
+    <div class="modal" id="about-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>À propos</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>AnkiPro Français est une application web inspirée d'Anki, conçue pour vous aider à apprendre l'anglais efficacement grâce à un système de répétition espacée.</p>
+                <p>Cette application utilise le stockage local de votre navigateur pour sauvegarder vos mots et votre progression.</p>
+                <h4>Fonctionnalités</h4>
+                <ul>
+                    <li>Traduction anglais-français</li>
+                    <li>Import de listes de mots</li>
+                    <li>Système de flashcards avec répétition espacée</li>
+                    <li>Suivi de progression</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/translation.js"></script>
+    <script src="js/flashcards.js"></script>
+    <script src="js/import.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

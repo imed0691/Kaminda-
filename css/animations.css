@@ -1,0 +1,204 @@
+/* animations.css - Animations pour les cartes et transitions */
+
+/* Animation de retournement de carte */
+@keyframes flipIn {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(180deg);
+    }
+}
+
+@keyframes flipOut {
+    from {
+        transform: rotateY(180deg);
+    }
+    to {
+        transform: rotateY(0deg);
+    }
+}
+
+/* Animation pour l'apparition des éléments */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animation pour la disparition des éléments */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Animation pour l'apparition par le haut */
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Animation pour l'apparition par le bas */
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Animation pour l'apparition par la gauche */
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animation pour l'apparition par la droite */
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animation de pulsation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Animation de secousse */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+/* Classes d'animation */
+.flip-in {
+    animation: flipIn 0.6s ease-out forwards;
+}
+
+.flip-out {
+    animation: flipOut 0.6s ease-in forwards;
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.3s ease forwards;
+}
+
+.slide-from-top {
+    animation: slideInFromTop 0.5s ease forwards;
+}
+
+.slide-from-bottom {
+    animation: slideInFromBottom 0.5s ease forwards;
+}
+
+.slide-from-left {
+    animation: slideInFromLeft 0.5s ease forwards;
+}
+
+.slide-from-right {
+    animation: slideInFromRight 0.5s ease forwards;
+}
+
+.pulse {
+    animation: pulse 0.5s ease-in-out;
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Animation pour les transitions de page */
+.page {
+    animation: fadeIn 0.5s ease;
+}
+
+/* Animation pour les notifications */
+.notification {
+    animation: slideInFromTop 0.5s ease, fadeOut 0.5s ease 3s forwards;
+}
+
+/* Animation pour les boutons */
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* Animation pour les cartes */
+.flashcard-inner {
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flashcard.flipped .flashcard-inner {
+    transform: rotateY(180deg);
+}
+
+/* Animation pour les éléments de la liste */
+.list-item-enter {
+    animation: slideInFromRight 0.3s ease forwards;
+}
+
+.list-item-exit {
+    animation: fadeOut 0.3s ease forwards;
+}
+
+/* Animation pour les modales */
+.modal-content {
+    animation: slideInFromTop 0.3s ease forwards;
+}
+
+/* Animation pour les succès */
+.success-animation {
+    animation: pulse 0.5s ease-in-out;
+}
+
+/* Animation pour les erreurs */
+.error-animation {
+    animation: shake 0.5s ease-in-out;
+}
