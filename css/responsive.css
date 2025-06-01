@@ -1,0 +1,106 @@
+/* Styles responsifs */
+@media (max-width: 768px) {
+  /* En-tête */
+  header {
+    flex-direction: column;
+  }
+  
+  .logo {
+    margin-bottom: 1rem;
+  }
+  
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* Listes */
+  .lists-container {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Détail de liste */
+  .list-detail-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .list-detail-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .list-detail-actions button {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Traduction */
+  .translate-body {
+    grid-template-columns: 1fr;
+  }
+  
+  .translate-languages {
+    flex-wrap: wrap;
+  }
+  
+  /* Flashcards */
+  .flashcard {
+    width: 100%;
+    height: 250px;
+  }
+  
+  .flashcard-word {
+    font-size: 1.5rem;
+  }
+  
+  .flashcards-keyboard-shortcuts {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Tests */
+  .test-options {
+    flex-direction: column;
+  }
+  
+  .test-option {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Navigation */
+  nav a {
+    padding: 0.25rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Boutons */
+  .btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Formulaires */
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 0.5rem;
+  }
+  
+  /* Ajout de mots */
+  .add-word-inputs {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Tableau de mots */
+  .words-table th,
+  .words-table td {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Modals */
+  .modal-content {
+    width: 95%;
+  }
+}

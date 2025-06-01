@@ -1,0 +1,208 @@
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes slideInDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Classes d'animation */
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.5s ease forwards;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.5s ease forwards;
+}
+
+.slide-in-up {
+  animation: slideInUp 0.5s ease forwards;
+}
+
+.slide-in-down {
+  animation: slideInDown 0.5s ease forwards;
+}
+
+.pulse {
+  animation: pulse 0.5s ease infinite;
+}
+
+.rotate {
+  animation: rotate 1s linear infinite;
+}
+
+.shake {
+  animation: shake 0.5s ease;
+}
+
+/* Animations pour les éléments spécifiques */
+.flashcard-flip {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.notification {
+  animation: slideInRight 0.3s ease forwards;
+}
+
+.notification.closing {
+  animation: slideInRight 0.3s ease forwards reverse;
+}
+
+.list-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.list-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature {
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+}
+
+.btn {
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.test-option {
+  transition: background-color 0.3s ease, transform 0.1s ease, border-color 0.3s ease;
+}
+
+.test-option:active {
+  transform: scale(0.98);
+}
+
+/* Animation pour le chargement */
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--primary-color);
+  animation: rotate 1s linear infinite;
+}
+
+/* Animation pour les transitions de vue */
+.view {
+  animation: fadeIn 0.3s ease;
+}
+
+/* Animation pour les flashcards */
+.flashcard-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flashcard.flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+/* Animation pour les notifications de succès */
+@keyframes successPulse {
+  0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(46, 204, 113, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+}
+
+.success-pulse {
+  animation: successPulse 1.5s ease infinite;
+}
+
+/* Animation pour les boutons d'action */
+.btn.primary:hover {
+  animation: pulse 1s ease;
+}
+
+/* Animation pour les modales */
+.modal {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-content {
+  animation: slideInUp 0.3s ease;
+}
+
+/* Animation pour les transitions de thème */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Animation pour les barres de progression */
+.flashcards-progress-fill {
+  transition: width 0.5s ease;
+}
+
+/* Animation pour les statistiques */
+.test-results-score {
+  animation: fadeIn 1s ease;
+}
+
+/* Animation pour les éléments de menu */
+.list-card-menu-content {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform-origin: top right;
+}
+
+.list-card-menu-content.active {
+  animation: fadeIn 0.2s ease;
+}
+
+/* Animation pour les onglets */
+.list-detail-tab {
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Animation pour les boutons de swap de langues */
+#swap-languages-btn:hover {
+  animation: rotate 0.5s ease;
+}
